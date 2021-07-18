@@ -1,0 +1,234 @@
+nav input:focus,
+nav select:focus,
+nav textarea:focus,
+nav button:focus {
+  outline: none;
+}
+
+
+
+/* 
+Navigation
+*/
+.logout{
+margin-top:15px;
+}
+
+/* logo */
+nav i.logo {
+  color:#c01515;
+  font-size: 50px;
+  align-self: center;
+  padding-left: 30px;
+  padding-top: 20px;
+  font-weight: bolder;
+}
+
+ 
+/* white bar */
+nav {
+  display: flex;
+  align-content: center;
+  position: fixed;
+  width: 100%;
+  margin-top: 0px;
+  border-bottom: #000000;
+  background: rgb(14, 2, 2);
+  height: 70px;
+}
+
+/* group of menu items */
+nav ul.main-nav {
+  margin: 0px;
+  padding: 0px;
+  text-align: right;
+  margin-left: auto;
+  padding-right: 30px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+/* menu list items */
+
+nav ul.main-nav > li {
+  margin-left: 40px;
+  height: 100%;
+  display: flex;
+}
+
+nav ul.main-nav li:hover > a {
+  color: #c01515;
+}
+
+/* menu list items link styles */
+nav ul.main-nav li a {
+  text-decoration: none;
+ 
+  font-size: 16px;
+  align-self: center;
+}
+
+nav input {
+  border: 1px solid #eeeeee;
+  padding: 10px 10px 10px 50px;
+  border-radius: 300px;
+  font-size: 14px;
+  background: none;
+}
+
+nav a#locationselector {
+  margin: 0px auto;
+  margin-top: 34px;
+  padding: 15px 39px;
+  display: table;
+  clear: both;
+  border-radius: 30px;
+  font-size: 15px;
+  color: #ffffff;
+  background: #f87573;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+nav a#locationselector:hover {
+  background: #da5654;
+}
+nav i.fa-search {
+  margin-right: -40px;
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+nav i.fa-map-marker-alt {
+  padding-right: 10px;
+}
+
+nav a.imgbounds {
+  overflow: hidden;
+  display: block;
+  height: 150px;
+  width: 100%;
+  position: relative;
+  background: black;
+}
+
+nav a.imgbounds p {
+  color: white;
+  font-size: 22px;
+  position: absolute;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  top: 46%;
+}
+
+nav a.imgbounds img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  transition: all 1s ease-in-out;
+}
+
+nav a.imgbounds:hover img {
+  opacity: 0.6;
+  transform: scale(1.2);
+  transition: all 1s ease-in-out;
+}
+
+/* Mobile nav */
+
+nav .menu-toggle-button {
+  cursor: pointer;
+  display: none;
+  user-select: none;
+  margin-left: auto;
+  align-self: center;
+  padding-right: 30px;
+}
+
+nav .menu-toggle-button:hover {
+  color: #f87573;
+}
+
+nav .menu-toggle {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+/* EVERYTHING BELOW THIS IS FOR MOBILE MENU BREAK */
+
+@media screen and (max-width: 767px) {
+  
+  nav {
+    border-bottom: 1px solid #dddddd;
+  }
+
+  nav ul.main-nav {
+    display: block;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 71px;
+    height: 100vh;
+    overflow-y: scroll;
+    margin-bottom: 70px;
+    z-index: 9999;
+  }
+nav{z-index: 9999;}
+nav  ul.main-nav li {
+    height: auto;
+    position: relative;
+    background: rgb(27, 1, 1);
+    width: 100%;
+    margin: 0px;
+    padding: 10px 40px;
+    box-sizing: border-box;
+    text-align: left;
+    border-bottom: 1px solid #130202;
+    display: block;
+    z-index: 9999;
+  }
+
+nav  ul.main-nav > li:last-child {
+    border-bottom: 0px;
+    padding-bottom: 130px;
+    z-index: 9999;
+  }
+
+  nav .menu-toggle:not(:checked) ~ ul {
+    display: none;
+    z-index: 9999;
+  }
+
+nav  input:checked + label {
+    color: #f87573;
+    z-index: 9999;
+  }
+
+nav  input:checked + label:before {
+    content: "\f00d";
+    font-size: 20px;
+    z-index: 9999;
+  }
+
+  nav .menu-toggle-button {
+    display: inline-flex;
+    z-index: 9999;
+  }
+
+
+  nav a.imgbounds {
+    margin-top: 30px;
+    z-index: 9999;
+  }
+}
+
+.menus{
+  padding-top:15px;
+}

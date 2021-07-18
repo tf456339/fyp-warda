@@ -1,0 +1,41 @@
+#__next{
+	height:90vh;
+}
+body {
+
+  margin: 0px;
+  padding: 0px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+@media (min-width:600px){
+  .rootcard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pcard{
+    max-width: 200px;
+    margin: 20px;
+}  
+}
+
+
+.authcard{
+ 
+  margin: 80px auto !important;
+  max-width: 500px !important;
+  padding: 50px;
+  background-color:transparent ;
+  border-color: #c01515;
+ 
+  
+}
+input:focus{
+  border-bottom: 1px solid #c01515 !important;
+  box-shadow: 0 1px 0 0 #a10404 !important;
+}
+.bg-white{
+  background: white;
+}

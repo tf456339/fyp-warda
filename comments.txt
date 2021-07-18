@@ -1,0 +1,15 @@
+MENU K LYE FOLLOWING CHANGES KE HEIN
+1: Sab sy pahly public k folder mei nav.css ke file add ke hai codepen sy ly K. nav.css k code mei four changes ke HEIN
+    1.1: extra code remove keya
+    1.2: saray code ko nav mei enclose keya ta k yeah code sirf nav k menu k childs py add ho
+    1.3: mobile k menu ke z-index ke value add ke ta k wo baki content k oper display ho
+    1.4: menus ke top pedding define ke menu ko middle mei align krny k lye
+2: componenets/Layout.js mei three changes ke hein
+    2.1: line 11 py font awesome ke library add ke hai ta k icons add kr sakein
+    2.2: line 13 py nav.css ke file add ke hai
+    2.3: line 17 py break rows add ke hein 
+3: componenets/Navbar.js mei total file change ke hai
+AUR SEARCH K LYE FOLLOWING STEPS HEIN:
+1: API/products.js mei filter lagana hai search k keywords sy
+2: UI sy search keywords ko client py capture krna hai aur server py bhejna hai
+3: Server py client k keywords ko capture krna hai aur keywords ke array ko pass kr dena hai
