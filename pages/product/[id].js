@@ -127,7 +127,7 @@ const Product = ({product})=>{
 //       props: {product:data}
 //     }
 //   }
-export async function getStaticProps({params:{id}}) {
+export async function getServerSideProps({params:{id}}) {
     const res = await fetch(`${baseUrl}/api/product/${id}`)
     const data = await res.json()
     return {
@@ -135,7 +135,7 @@ export async function getStaticProps({params:{id}}) {
     }
   }
 
-export async function getStaticPaths() {
+export async function getServerSidePaths() {
     return {
       paths: [
         { params: { id:"5f0f502b9cb9363990f3de6c" } } 
