@@ -232,3 +232,6 @@ nav  input:checked + label:before {
 .menus{
   padding-top:15px;
 }
+#header_search_query{
+  color:white;
+}

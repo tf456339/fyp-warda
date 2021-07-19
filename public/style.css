@@ -39,3 +39,19 @@ input:focus{
 .bg-white{
   background: white;
 }
+.wrapper{
+  width:700px;
+  margin:20px auto;
+  vertical-align: middle;
+}
+.book-half{
+  width:350px;
+}
+.book-left{
+float:left;
+}
+.book-right{
+  background:grey;
+  float:left;
+  vertical-align: middle;
+}

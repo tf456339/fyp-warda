@@ -44,7 +44,11 @@ const getallProducts = async (req,res)=>{
     //products will return all products
    // res.status(200).json(products)
     //filteredProducts will return only the products with an attribute of categories
-    res.status(200).json(filteredProducts)
+    if(keywords.length==0){
+      res.status(200).json(products)
+    }else{
+      res.status(200).json(filteredProducts)
+    }
     
   }catch(err){
     console.log(err)
