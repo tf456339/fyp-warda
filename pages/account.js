@@ -19,13 +19,17 @@ const Account = ({orders})=>{
                      <li key={item._id}>
                         <div className="collapsible-header"><i className="material-icons">folder</i>{item.createdAt}</div>
                         <div className="collapsible-body">
-                            <h5>Total  ₹ {item.total}</h5>
+                            <h4>Total  ₹ {item.total}</h4> 
                             {
                                 item.products.map(pitem=>{
                                   return <h6 key={pitem._id}>{pitem.product.name} X {pitem.quantity}</h6>  
                                 })
                             }
                 
+                             <button>Order Recived as per Description</button><br></br>
+                            <button>Order Recieved with following defects</button>
+                            
+                            <textarea rows="20" ></textarea>
                         </div>
                     </li>   
                     )
@@ -36,6 +40,37 @@ const Account = ({orders})=>{
         
         )
   }
+
+  const OrderHistoryAdmin = ()=>{
+    return(
+        <ul className="collapsible" ref={orderCard}>
+
+            {orders.map(item=>{
+                return(
+                 <li key={item._id}>
+                    <div className="collapsible-header"><i className="material-icons">folder</i>{item.createdAt}</div>
+                    <div className="collapsible-body">
+                        <h4>Total  ₹ {item.total}</h4> 
+                        {
+                            item.products.map(pitem=>{
+                              return <h6 key={pitem._id}>{pitem.product.name} X {pitem.quantity}</h6>  
+                            })
+                        }
+            
+                         
+                        <h5>Following is the Feedback of Buyer:</h5>
+                        
+                        <textarea rows="20" ></textarea>
+                    </div>
+                </li>   
+                )
+            })}
+                
+            
+       </ul>
+    
+    )
+}
 
     return(
         <div className="container">
@@ -52,7 +87,8 @@ const Account = ({orders})=>{
             :<OrderHistory />
             }
             {user.role == "root"
-            &&<UserRoles />
+            &&<UserRoles />&&<h1>Status of Orders is as Follows:</h1>&&
+            <OrderHistoryAdmin />
             } 
         </div>
     )

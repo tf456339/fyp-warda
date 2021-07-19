@@ -49,8 +49,9 @@ const Product = ({product})=>{
    }
 
    const AddToCart = async ()=>{
+     
      const res =  await fetch(`${baseUrl}/api/cart`,{
-      //link send krta hn
+     
        method:"PUT",
        headers:{
          "Content-Type":"application/json",
@@ -74,11 +75,14 @@ const Product = ({product})=>{
 
     return(
         <div className="container center-align ">
-            <h3>{product.name}</h3>
-            <img src={product.mediaUrl} style={{width:'30%'}} />
+          <div className="wrapper">
+          <div className="book-left book-half"><img src={product.mediaUrl} style={{width:'100%'}} /></div>
+          <div className="book-right book-half">
+          <h3>{product.name}</h3>
+            
             <h5>RS {product.price}</h5>
             <input
-             type="number"
+             type="hidden"
              style={{width:"100px",margin:"10px"}}
              min="1"
              value={quantity}
@@ -115,18 +119,16 @@ const Product = ({product})=>{
             }
            
             
-            {getModal()}
+            {getModal()}            
+          </div>
+          </div>
+
         </div>
     )
 }
 
-// export async function getServerSideProps({params:{id}}) {
-//     const res = await fetch(`${baseUrl}/api/product/${id}`)
-//     const data = await res.json()
-//     return {
-//       props: {product:data}
-//     }
-//   }
+
+
 export async function getServerSideProps({params:{id}}) {
     const res = await fetch(`${baseUrl}/api/product/${id}`)
     const data = await res.json()

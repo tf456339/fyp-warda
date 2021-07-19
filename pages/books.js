@@ -33,8 +33,6 @@ async function filterBooks (categories){
     </div>
     <div className="card-content">
       <p> PKR:  {product.price}</p>
-    </div>
-    <div className="card-category">
       <p> Category:  {product.categories}</p>
     </div>
     <div className="card-action">

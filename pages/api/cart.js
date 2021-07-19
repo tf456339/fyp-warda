@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken'
 import Cart from '../../models/Cart'
+import Product from '../../models/Product'
 import Authenticated from '../../helpers/Authenticated'
 import initDb from '../../helpers/initDB'
 
@@ -37,18 +38,16 @@ const addProduct = Authenticated(async(req,res)=>{
      const pExists =  cart.products.some(pdoc => productId === pdoc.product.toString() )
    
      if(pExists){
-        await Cart.findOneAndUpdate(
-            {_id:cart._id,"products.product":productId},
-            {$inc:{"products.$.quantity":quantity}}
-        )
+        res.status(200).json({message:"The selected product is already available in the cart!"})
      }else{
          const newProduct = {quantity,product:productId}
          await Cart.findOneAndUpdate(
              {_id:cart._id},
              {$push:{products:newProduct}}
              )
+             res.status(200).json({message:"Your selected product has been added in the shopping cart!"})
      }
-     res.status(200).json({message:"product added to cart"})
+     
 
 
 })
